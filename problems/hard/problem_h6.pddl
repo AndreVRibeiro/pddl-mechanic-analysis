@@ -1,0 +1,238 @@
+(define (problem problem_h6) (:domain dungeons-of-dreadrock)
+(:objects
+        ;; Key, Keyhole, Gate and Walls
+        t1 t2 t3 t4 t5 t6 t7 t8 - tile 
+        t9 t10 t11 t12 t13 t14 t15 t16 - tile
+        t17 t18 t19 t20 t21 t22 t23 t24 - tile 
+        t25 t26 t27 t28 t29 t30 t31 t32 - tile
+        t33 t34 t35 t36 t37 t38 t39 t40 - tile
+        t41 t42 t43 t44 t45 t46 t47 t48 - tile
+        t49 t50 t51 t52 t53 t54 t55 t56 - tile
+        t57 t58 t59 t60 t61 t62 t63 t64 - tile
+
+        
+        p - player
+        z0 - zombie
+        f0 - fireball
+        s0 - sword
+
+        k1 - key
+        kh1 - keyhole
+        d1 - door
+        k2 - key
+        kh2 - keyhole
+        d2 - door
+        k3 - key
+        kh3 - keyhole
+        d3 - door
+        k4 - key
+        kh4 - keyhole
+        d4 - door
+
+        po0 - portal
+
+)
+
+(:init  (player-alive)
+        (player-at p t56)
+
+        (wall t3)
+        (wall t6)
+        (wall t8)
+        (wall t16)
+        (wall t27)
+        (wall t33)
+        (wall t34)
+        (wall t35)
+        (wall t36)
+        (wall t39)
+        (wall t40)
+        (wall t44)
+
+        (blocked t52)
+        (blocked t60)
+
+        (metal-door-at d1 t52)
+        (door-closed d1)
+
+        (key-at k1 t55)
+        (interactions t55)
+        (keyhole-at kh1 t60)
+        (opens k1 kh1 d1)
+        (not (key-inserted k1 kh1))
+
+        (blocked t37)
+        (blocked t38)
+
+        (metal-door-at d2 t37)
+        (door-closed d2)
+
+        (key-at k2 t57)
+        (interactions t57)
+        (keyhole-at kh2 t38)
+        (opens k2 kh2 d2)
+        (not (key-inserted k2 kh2))
+
+        (blocked t11)
+        (blocked t19)
+
+        (metal-door-at d3 t19)
+        (door-closed d3)
+
+        (key-at k3 t32)
+        (interactions t32)
+        (keyhole-at kh3 t11)
+        (opens k3 kh3 d3)
+        (not (key-inserted k3 kh3))
+
+        (blocked t14)
+        (blocked t15)
+
+        (metal-door-at d4 t15)
+        (door-closed d4)
+
+        (key-at k4 t9)
+        (interactions t9)
+        (keyhole-at kh4 t14)
+        (opens k4 kh4 d4)
+        (not (key-inserted k4 kh4))
+
+        
+        (adjacent t1 t2) (adjacent t2 t1)
+        (adjacent t2 t3) (adjacent t3 t2)
+        (adjacent t3 t4) (adjacent t4 t3)
+        (adjacent t4 t5) (adjacent t5 t4)
+        (adjacent t5 t6) (adjacent t6 t5)
+        (adjacent t6 t7) (adjacent t7 t6)
+        (adjacent t7 t8) (adjacent t8 t7)
+
+        (adjacent t9 t10) (adjacent t10 t9)
+        (adjacent t10 t11) (adjacent t11 t10)
+        (adjacent t11 t12) (adjacent t12 t11)
+        (adjacent t12 t13) (adjacent t13 t12)
+        (adjacent t13 t14) (adjacent t14 t13)
+        (adjacent t14 t15) (adjacent t15 t14)
+        (adjacent t15 t16) (adjacent t16 t15)
+
+        (adjacent t17 t18) (adjacent t18 t17)
+        (adjacent t18 t19) (adjacent t19 t18)
+        (adjacent t19 t20) (adjacent t20 t19)
+        (adjacent t20 t21) (adjacent t21 t20)
+        (adjacent t21 t22) (adjacent t22 t21)
+        (adjacent t22 t23) (adjacent t23 t22)
+        (adjacent t23 t24) (adjacent t24 t23)
+
+        (adjacent t25 t26) (adjacent t26 t25)
+        (adjacent t26 t27) (adjacent t27 t26)
+        (adjacent t27 t28) (adjacent t28 t27)
+        (adjacent t28 t29) (adjacent t29 t28)
+        (adjacent t29 t30) (adjacent t30 t29)
+        (adjacent t30 t31) (adjacent t31 t30)
+        (adjacent t31 t32) (adjacent t32 t31)
+
+        (adjacent t33 t34) (adjacent t34 t33)
+        (adjacent t34 t35) (adjacent t35 t34)
+        (adjacent t35 t36) (adjacent t36 t35)
+        (adjacent t36 t37) (adjacent t37 t36)
+        (adjacent t37 t38) (adjacent t38 t37)
+        (adjacent t38 t39) (adjacent t39 t38)
+        (adjacent t39 t40) (adjacent t40 t39)
+
+        (adjacent t41 t42) (adjacent t42 t41)
+        (adjacent t42 t43) (adjacent t43 t42)
+        (adjacent t43 t44) (adjacent t44 t43)
+        (adjacent t44 t45) (adjacent t45 t44)
+        (adjacent t45 t46) (adjacent t46 t45)
+        (adjacent t46 t47) (adjacent t47 t46)
+        (adjacent t47 t48) (adjacent t48 t47)
+
+        (adjacent t49 t50) (adjacent t50 t49)
+        (adjacent t50 t51) (adjacent t51 t50)
+        (adjacent t51 t52) (adjacent t52 t51)
+        (adjacent t52 t53) (adjacent t53 t52)
+        (adjacent t53 t54) (adjacent t54 t53)
+        (adjacent t54 t55) (adjacent t55 t54)
+        (adjacent t55 t56) (adjacent t56 t55)
+
+        (adjacent t57 t58) (adjacent t58 t57)
+        (adjacent t58 t59) (adjacent t59 t58)
+        (adjacent t59 t60) (adjacent t60 t59)
+        (adjacent t60 t61) (adjacent t61 t60)
+        (adjacent t61 t62) (adjacent t62 t61)
+        (adjacent t62 t63) (adjacent t63 t62)
+        (adjacent t63 t64) (adjacent t64 t63)
+
+        (adjacent t1 t9)  (adjacent t9 t1)
+        (adjacent t2 t10) (adjacent t10 t2)
+        (adjacent t3 t11) (adjacent t11 t3)
+        (adjacent t4 t12) (adjacent t12 t4)
+        (adjacent t5 t13) (adjacent t13 t5)
+        (adjacent t6 t14) (adjacent t14 t6)
+        (adjacent t7 t15) (adjacent t15 t7)
+        (adjacent t8 t16) (adjacent t16 t8)
+
+        (adjacent t9 t17)  (adjacent t17 t9)
+        (adjacent t10 t18) (adjacent t18 t10)
+        (adjacent t11 t19) (adjacent t19 t11)
+        (adjacent t12 t20) (adjacent t20 t12)
+        (adjacent t13 t21) (adjacent t21 t13)
+        (adjacent t14 t22) (adjacent t22 t14)
+        (adjacent t15 t23) (adjacent t23 t15)
+        (adjacent t16 t24) (adjacent t24 t16)
+
+        (adjacent t17 t25) (adjacent t25 t17)
+        (adjacent t18 t26) (adjacent t26 t18)
+        (adjacent t19 t27) (adjacent t27 t19)
+        (adjacent t20 t28) (adjacent t28 t20)
+        (adjacent t21 t29) (adjacent t29 t21)
+        (adjacent t22 t30) (adjacent t30 t22)
+        (adjacent t23 t31) (adjacent t31 t23)
+        (adjacent t24 t32) (adjacent t32 t24)
+
+        (adjacent t25 t33) (adjacent t33 t25)
+        (adjacent t26 t34) (adjacent t34 t26)
+        (adjacent t27 t35) (adjacent t35 t27)
+        (adjacent t28 t36) (adjacent t36 t28)
+        (adjacent t29 t37) (adjacent t37 t29)
+        (adjacent t30 t38) (adjacent t38 t30)
+        (adjacent t31 t39) (adjacent t39 t31)
+        (adjacent t32 t40) (adjacent t40 t32)
+
+        (adjacent t33 t41) (adjacent t41 t33)
+        (adjacent t34 t42) (adjacent t42 t34)
+        (adjacent t35 t43) (adjacent t43 t35)
+        (adjacent t36 t44) (adjacent t44 t36)
+        (adjacent t37 t45) (adjacent t45 t37)
+        (adjacent t38 t46) (adjacent t46 t38)
+        (adjacent t39 t47) (adjacent t47 t39)
+        (adjacent t40 t48) (adjacent t48 t40)
+
+        (adjacent t41 t49) (adjacent t49 t41)
+        (adjacent t42 t50) (adjacent t50 t42)
+        (adjacent t43 t51) (adjacent t51 t43)
+        (adjacent t44 t52) (adjacent t52 t44)
+        (adjacent t45 t53) (adjacent t53 t45)
+        (adjacent t46 t54) (adjacent t54 t46)
+        (adjacent t47 t55) (adjacent t55 t47)
+        (adjacent t48 t56) (adjacent t56 t48)
+
+        (adjacent t49 t57) (adjacent t57 t49)
+        (adjacent t50 t58) (adjacent t58 t50)
+        (adjacent t51 t59) (adjacent t59 t51)
+        (adjacent t52 t60) (adjacent t60 t52)
+        (adjacent t53 t61) (adjacent t61 t53)
+        (adjacent t54 t62) (adjacent t62 t54)
+        (adjacent t55 t63) (adjacent t63 t55)
+        (adjacent t56 t64) (adjacent t64 t56)
+
+        
+
+
+)
+
+(:goal  (and (player-alive)
+             (player-at p t7)
+        )
+)
+
+)

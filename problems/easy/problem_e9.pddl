@@ -1,0 +1,123 @@
+(define (problem problem_e9) (:domain dungeons-of-dreadrock)
+(:objects
+    ;; Zombie, Sword and Walls
+    t1 t2 t3 t4 - tile 
+    t5 t6 t7 t8 - tile
+    t9 t10 t11 t12 - tile 
+    t13 t14 t15 t16 - tile
+    p - player
+    z1 - zombie
+    z2 - zombie
+    z3 - zombie
+    s1 - sword
+
+)
+
+(:init  (player-alive)
+        (player-at p t13)
+
+        (wall t7)
+        (wall t8)
+
+        (sword-at s1 t16)
+        (interactions t16)
+
+        (zombie-at z1 t10)
+        (enemy-interaction t10)
+        (zombie-alive z1)
+        (zombie-path-forward z1 t10 t9)     
+        (zombie-path-backward z1 t9 t10)    
+        (zombie-path-forward-last z1 t9)    
+        (zombie-path-backward-last z1 t10)
+        (zombie-forward z1)
+
+        (zombie-at z2 t2)
+        (enemy-interaction t2)
+        (zombie-alive z2)
+        (zombie-path-forward z2 t2 t6)     
+        (zombie-path-backward z2 t6 t2)    
+        (zombie-path-forward-last z2 t6)    
+        (zombie-path-backward-last z2 t2)
+        (zombie-forward z2)
+
+        (zombie-at z3 t5)
+        (enemy-interaction t5)
+        (zombie-alive z3)
+        (zombie-path-forward z3 t5 t1)     
+        (zombie-path-backward z3 t1 t5)    
+        (zombie-path-forward-last z3 t1)    
+        (zombie-path-backward-last z3 t5)
+        (zombie-forward z3)
+
+        (adjacent t1 t2)
+        (adjacent t1 t5)
+
+        (adjacent t2 t1)
+        (adjacent t2 t3)
+        (adjacent t2 t6)
+
+        (adjacent t3 t2)
+        (adjacent t3 t4)
+        (adjacent t3 t7)
+
+        (adjacent t4 t3)
+        (adjacent t4 t8)
+
+        (adjacent t5 t1)
+        (adjacent t5 t6)
+        (adjacent t5 t9)
+
+        (adjacent t6 t2)
+        (adjacent t6 t5)
+        (adjacent t6 t7)
+        (adjacent t6 t10)
+
+        (adjacent t7 t3)
+        (adjacent t7 t6)
+        (adjacent t7 t8)
+        (adjacent t7 t11)
+
+        (adjacent t8 t4)
+        (adjacent t8 t7)
+        (adjacent t8 t12)
+
+        (adjacent t9 t5)
+        (adjacent t9 t10)
+        (adjacent t9 t13)
+
+        (adjacent t10 t6)
+        (adjacent t10 t9)
+        (adjacent t10 t11)
+        (adjacent t10 t14)
+
+        (adjacent t11 t7)
+        (adjacent t11 t10)
+        (adjacent t11 t12)
+        (adjacent t11 t15)
+
+        (adjacent t12 t8)
+        (adjacent t12 t11)
+        (adjacent t12 t16)
+
+        (adjacent t13 t9)
+        (adjacent t13 t14)
+
+        (adjacent t14 t10)
+        (adjacent t14 t13)
+        (adjacent t14 t15)
+
+        (adjacent t15 t11)
+        (adjacent t15 t14)
+        (adjacent t15 t16)
+
+        (adjacent t16 t12)
+        (adjacent t16 t15)
+        
+)
+
+(:goal  (and (player-alive)
+             (player-at p t4)
+        )
+)
+
+)

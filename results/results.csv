@@ -1,0 +1,73 @@
+run_id,problem_id,difficulty,grid_size,,items_present,heuristic,search_algorithm,planner_time_seconds,search_time_seconds,total_time_seconds,expanded_states,evaluated_states,generated_states,dead_ends_steps,peak_memory_kb,plan_length_steps,status
+1,e1,Easy,4x4,,Empty,ff(),eager_greedy([h]),"1,83",0,"0,058862",7,12,19,0,11060,6,Solution found
+2,e1,Easy,4x4,,Empty,add(),eager_greedy([h]),"1,63",0,"0,005228",7,12,19,0,11060,6,Solution found
+3,e1,Easy,4x4,,Empty,lmcut(),eager_greedy([h]),"1,58",0,"0,006988",7,12,19,0,11060,6,Solution found
+4,e2,Easy,4x4,,Walls,ff(),eager_greedy([h]),"1,17",0,"0,006624",7,9,14,0,11060,6,Solution found
+5,e2,Easy,4x4,,Walls,add(),eager_greedy([h]),"1,48",0,"0,003426",7,9,14,0,11060,6,Solution found
+6,e2,Easy,4x4,,Walls,lmcut(),eager_greedy([h]),"1,05",0,0,7,9,14,0,11060,6,Solution found
+7,e3,Easy,4x4,,Zombies+Walls,ff(),eager_greedy([h]),"1,29",0,"0,004235",7,22,21,2,11192,6,Solution found
+8,e3,Easy,4x4,,Zombies+Walls,add(),eager_greedy([h]),"1,23","0,004228","0,008462",8,22,23,2,11192,6,Solution found
+9,e3,Easy,4x4,,Zombies+Walls,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
+10,e4,Easy,4x4,,Portals+Walls,ff(),eager_greedy([h]),1,0,"0,004218",10,12,21,0,11060,9,Solution found
+11,e4,Easy,4x4,,Portals+Walls,add(),eager_greedy([h]),"1,18",0,"0,004246",10,12,21,0,11060,9,Solution found
+12,e4,Easy,4x4,,Portals+Walls,lmcut(),eager_greedy([h]),"2,51",0,0,10,12,21,0,11060,9,Solution found
+13,e5,Easy,4x4,,Zombies ,ff(),eager_greedy([h]),"1,77",0,"0,00863",8,24,23,1,11524,7,Solution found
+14,e5,Easy,4x4,,Zombies,add(),eager_greedy([h]),"1,59",0,"0,011424",8,24,23,1,11512,7,Solution found
+15,e5,Easy,4x4,,Zombies,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
+16,e6,Easy,4x4,,Key+Keyhole+Door+Walls,ff(),eager_greedy([h]),"1,05","0,001442","0,006618",15,22,35,0,11060,12,Solution found
+17,e6,Easy,4x4,,Key+Keyhole+Door+Walls,add(),eager_greedy([h]),"1,24",0,"0,004207",16,24,38,0,11060,12,Solution found
+18,e6,Easy,4x4,,Key+Keyhole+Door+Walls,lmcut(),eager_greedy([h]),"0,94",0,"0,00321",16,24,38,0,11060,12,Solution found
+19,e7,Easy,4x4,,Fireball+Pressure Plate+Walls,ff(),eager_greedy([h]),"1,29","0,004225","0,007147",9,18,40,0,11196,8,Solution found
+20,e7,Easy,4x4,,Fireball+Pressure Plate+Walls,add(),eager_greedy([h]),"2,44","0,004198","0,007292",10,19,43,0,11192,8,Solution found
+21,e7,Easy,4x4,,Fireball+Pressure Plate+Walls,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
+25,e9,Easy,4x4,,Sword+Zombies+Walls,ff(),eager_greedy([h]),"4,04","0,004235","0,012495",20,36,61,2,11780,11,Solution found
+26,e9,Easy,4x4,,Sword+Zombies+Walls,add(),eager_greedy([h]),"4,38",0,"0,01114",20,38,64,2,11764,11,Solution found
+27,e9,Easy,4x4,,Sword+Zombies+Walls,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
+46,m1,Medium,6x6,,Empty,ff(),eager_greedy([h]),"9,95","0,004","0,007902",11,23,34,0,11060,10,Solution found
+47,m1,Medium,6x6,,Empty,add(),eager_greedy([h]),"9,7","0,00116","0,005988",11,23,34,0,11060,10,Solution found
+48,m1,Medium,6x6,,Empty,lmcut(),eager_greedy([h]),"10,03",0,"0,005499",11,23,34,0,11060,10,Solution found
+49,m2,Medium,6x6,,Walls,ff(),eager_greedy([h]),"6,88","0,001559","0,0065",7,11,15,0,11060,6,Solution found
+50,m2,Medium,6x6,,Walls,add(),eager_greedy([h]),"6,69",0,"0,005177",7,11,15,0,11060,6,Solution found
+51,m2,Medium,6x6,,Walls,lmcut(),eager_greedy([h]),"6,98","0,001747","0,005743",7,11,15,0,11060,6,Solution found
+52,m3,Medium,6x6,,Zombies+Walls,ff(),eager_greedy([h]),"16,52","0,00702","0,025709",35,80,97,13,12208,24,Solution found
+53,m3,Medium,6x6,,Zombies+Walls,add(),eager_greedy([h]),"16,3","0,007986","0,027998",33,78,89,14,12208,24,Solution found
+54,m3,Medium,6x6,,Zombies+Walls,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
+55,m4,Medium,6x6,,Portals+Walls,ff(),eager_greedy([h]),"7,23","0,003993","0,007359",12,18,28,0,11060,11,Solution found
+56,m4,Medium,6x6,,Portals+Walls,add(),eager_greedy([h]),"7,22","0,003991","0,003991",12,18,28,0,11060,11,Solution found
+57,m4,Medium,6x6,,Portals+Walls,lmcut(),eager_greedy([h]),"6,85",0,"0,004007",12,18,28,0,11060,11,Solution found
+58,m5,Medium,6x6,,Zombies ,ff(),eager_greedy([h]),"55,73","0,008253","0,062569",14,47,48,7,15244,12,Solution found
+59,m5,Medium,6x6,,Zombies,add(),eager_greedy([h]),"55,67","0,008243","0,065075",14,47,48,7,15244,12,Solution found
+60,m5,Medium,6x6,,Zombies,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
+61,m6,Medium,6x6,,Key+Keyhole+Door+Walls,ff(),eager_greedy([h]),"7,12","0,004088","0,00826",42,47,86,0,11060,30,Solution found
+62,m6,Medium,6x6,,Key+Keyhole+Door+Walls,add(),eager_greedy([h]),"7,08","0,004152","0,007132",43,48,88,0,11060,30,Solution found
+63,m6,Medium,6x6,,Key+Keyhole+Door+Walls,lmcut(),eager_greedy([h]),"8,81","0,004154","0,004154",42,47,86,0,11060,30,Solution found
+64,m7,Medium,6x6,,Fireball+Pressure Plate+Walls,ff(),eager_greedy([h]),"25,86","0,004148","0,016598",27,48,207,7,12144,20,Solution found
+65,m7,Medium,6x6,,Fireball+Pressure Plate+Walls,add(),eager_greedy([h]),"25,81","0,003949","0,01611",27,48,207,7,12144,20,Solution found
+66,m7,Medium,6x6,,Fireball+Pressure Plate+Walls,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
+70,m9,Medium,6x6,,Sword+Zombies+Walls,ff(),eager_greedy([h]),"73,81","0,054416","0,100857",144,214,386,30,15444,27,Solution found
+71,m9,Medium,6x6,,Sword+Zombies+Walls,add(),eager_greedy([h]),"71,55","0,050852","0,094482",144,214,386,30,15444,27,Solution found
+72,m9,Medium,6x6,,Sword+Zombies+Walls,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
+91,h1,Hard,8x8,,Empty,ff(),eager_greedy([h]),"56,94",0,"0,004235",15,33,48,0,11192,14,Solution found
+92,h1,Hard,8x8,,Empty,add(),eager_greedy([h]),"58,24",0,"0,293414",15,33,48,0,11192,14,Solution found
+93,h1,Hard,8x8,,Empty,lmcut(),eager_greedy([h]),"56,84","0,004259","0,007474",15,33,48,0,11208,14,Solution found
+94,h2,Hard,8x8,,Walls,ff(),eager_greedy([h]),"38,95",0,"0,004266",14,17,28,0,11060,13,Solution found
+95,h2,Hard,8x8,,Walls,add(),eager_greedy([h]),"40,73","0,004267","0,00846",14,17,28,0,11060,13,Solution found
+96,h2,Hard,8x8,,Walls,lmcut(),eager_greedy([h]),"37,07",0,"0,00395",14,17,28,0,11060,13,Solution found
+97,h3,Hard,8x8,,Zombies+Walls,ff(),eager_greedy([h]),"220,84","0,036181","0,10043",53,135,159,21,16072,34,Solution found
+98,h3,Hard,8x8,,Zombies+Walls,add(),eager_greedy([h]),"226,17","0,032028","0,096002",53,126,157,19,16072,35,Solution found
+99,h3,Hard,8x8,,Zombies+Walls,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
+100,h4,Hard,8x8,,Portals+Walls,ff(),eager_greedy([h]),"43,01","0,003305","0,009793",20,34,55,0,11060,19,Solution found
+101,h4,Hard,8x8,,Portals+Walls,add(),eager_greedy([h]),"41,4",0,"0,004242",20,34,55,0,11060,19,Solution found
+102,h4,Hard,8x8,,Portals+Walls,lmcut(),eager_greedy([h]),"41,27",0,"0,004503",20,34,55,0,11060,19,Solution found
+103,h5,Hard,8x8,,Zombies ,ff(),eager_greedy([h]),"708,58","0,101624","0,392405",51,116,191,27,35196,12,Solution found
+104,h5,Hard,8x8,,Zombies,add(),eager_greedy([h]),"709,86","0,055425","0,343098",20,60,74,14,35196,12,Solution found
+105,h5,Hard,8x8,,Zombies,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
+106,h6,Hard,8x8,,Key+Keyhole+Door+Walls,ff(),eager_greedy([h]),"51,95","0,004288","0,008584",80,136,232,0,11196,53,Solution found
+107,h6,Hard,8x8,,Key+Keyhole+Door+Walls,add(),eager_greedy([h]),"55,61","0,00445","0,00779",101,137,285,0,11196,51,Solution found
+108,h6,Hard,8x8,,Key+Keyhole+Door+Walls,lmcut(),eager_greedy([h]),"51,56","0,004447","0,008892",70,123,204,0,11200,51,Solution found
+109,h7,Hard,8x8,,Fireball+Pressure Plate+Walls,ff(),eager_greedy([h]),"166,63","0,008442","0,046377",31,61,260,14,13964,28,Solution found
+110,h7,Hard,8x8,,Fireball+Pressure Plate+Walls,add(),eager_greedy([h]),"209,39","0,012067","0,072245",47,92,426,16,15900,35,Solution found
+111,h7,Hard,8x8,,Fireball+Pressure Plate+Walls,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
+115,h9,Hard,8x8,,Sword+Zombies+Walls,ff(),eager_greedy([h]),"520,02","2,472153","2,62456",2576,3036,7297,381,27020,104,Solution found
+116,h9,Hard,8x8,,Sword+Zombies+Walls,add(),eager_greedy([h]),"563,21","2,558434","2,704691",2567,3026,7278,374,27020,146,Solution found
+117,h9,Hard,8x8,,Sword+Zombies+Walls,lmcut(),eager_greedy([h]),,,,,,,,,,Does not support conditional effects
